@@ -14,9 +14,10 @@
     <body>
         <section>
             <h1>Flickr Public Photos</h1>
-            <form>
-                    <b>Fecha:</b> <input type='text' id="fechaMin" name="min_taken_date"/>
-                <input id="boton" type="button" value="fecha minima">
+           
+            <form method="POST" id="formMin">
+                    <b>buscar a partir de la fecha: </b> <input type='text' id="fechaMin" name="min_taken_date"/>
+                <input id="boton" type="button" value="Buscar">
             </form>
             <div id="imagenes"></div>
             
