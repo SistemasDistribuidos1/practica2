@@ -8,7 +8,7 @@ $(function() {
     function dateMin(fecha){ 
         fecha = $("#fechaMin").val();
         alert(fecha);
-        
+        $("#imagenes").append($("<p>"+fecha+"</p>"));
         $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
 	        + api_key + '&user_id=' +user_id + '&min_taken_date=' + fecha +
 	        '&format=json&nojsoncallback=1',
@@ -23,7 +23,7 @@ $(function() {
     function mostrar_fotos(info){
         var i;
         fecha = $("#fechaMin").val();
-        $("#imagenes").append($("<p>"+fecha+"</p>"));
+        /*$("#imagenes").append($("<p>"+fecha+"</p>"));*/
 	    for (i=0;i<info.photos.photo.length;i++) {
             if (!containe(info.photos.photo[i])){
            
