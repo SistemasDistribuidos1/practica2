@@ -16,7 +16,7 @@
             <h1>Flickr Public Photos</h1>
            
             <form method="POST" id="formMin">
-                    <b>buscar a partir de la fecha: </b> <input type='text' id="fechaMin" name="min_taken_date"/>
+                    <b>buscar a partir de la fecha: </b> <input type='text' id="fechaMin" name="min_taken_date" placeholder="ej:2017-02-11"/>
                 <input id="boton" type="button" value="Buscar">
             </form>
             
@@ -24,6 +24,11 @@
                     <b>buscar a partir de la etiqueta: </b> <input type='text' id="etiqueta1" name="tags"/>
                 <input id="botonTag" type="button" value="Buscar">
             </form>
+            
+            <form method="POST" id="formPlace">
+                <b>buscar a partir del lugar: </b> <input type='text' id="lugar1" name="has_geo"/>
+            <input id="botonPlace" type="button" value="Buscar">
+        </form>
             <div id="imagenes"></div>
             
         </section>
