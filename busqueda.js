@@ -1,13 +1,14 @@
 $(function() {
-   var boton = $("#boton");
-    
+    var boton = $("#boton");
+    var fecha;
    var listfoto= new Array();
     /*evento que se activa cuando el usuario busaca a partir de una fecha determinada */
     boton.click( dateMin);
     /*funcion que busca a traves de flickr las imgenes subidas despues de fecha*/
     function dateMin(fecha){ 
-        var fecha = $("#fechaMin").val();
+        fecha = $("#fechaMin").val();
         alert(fecha);
+        $("#imagenes").append($("<p>"+fecha+"</p>"));
         $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
 	        + api_key + '&user_id=' +user_id + '&min_taken_date=' + fecha +
 	        '&format=json&nojsoncallback=1',
@@ -15,26 +16,14 @@ $(function() {
         );
     }
     
-    var botonTag = $("#botonTag");
-    botonTag.click(tag);
-    
-    function tag(etiqueta){ 
-        var etiqueta = $("#etiqueta1").val();
-        alert(etiqueta);
-        $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
-	        + api_key + '&user_id=' +user_id + '&tags=' + etiqueta +
-	        '&format=json&nojsoncallback=1',
-	        mostrar_fotos
-        );
-    }
-
-    
     /**
      * muestras las fotos obtenidas de flickr
      * @param info 
      */
     function mostrar_fotos(info){
-	    var i;
+        var i;
+        fecha = $("#fechaMin").val();
+        /*$("#imagenes").append($("<p>"+fecha+"</p>"));*/
 	    for (i=0;i<info.photos.photo.length;i++) {
             if (!containe(info.photos.photo[i])){
            
@@ -42,8 +31,9 @@ $(function() {
 	        var url = 'https://farm'+item.farm+".staticflickr.com/"+item.server
 		          +'/'+item.id+'_'+item.secret+'_m.jpg';
         console.debug(url);
-       
-        $("#imagenes").append($("<img/>"+"<p>"+2018+"</p>").attr("src",url)); 
+        $("#imagenes").append($("<img/>").attr("src",url));
+        
+         
         listfoto.push(info.photos.photo[i]);
             }
         }
