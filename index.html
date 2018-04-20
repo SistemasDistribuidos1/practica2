@@ -19,7 +19,10 @@
                     <b>buscar a partir de la fecha: </b> <input type='text' id="fechaMin" name="min_taken_date" placeholder="ej:2017-02-11"/>
                 <input id="boton" type="button" value="Buscar">
             </form>
-            
+            <form method="POST" id="formMax">
+                <b>buscar antes de la fecha: </b> <input type='text' id="fechaMax1" name="max_taken_date"/>
+                <input id="botonMax" type="button" value="Buscar">
+            </form>
             <form method="POST" id="formTag">
                     <b>buscar a partir de la etiqueta: </b> <input type='text' id="etiqueta1" name="tags"/>
                 <input id="botonTag" type="button" value="Buscar">
@@ -28,7 +31,15 @@
             <form method="POST" id="formPlace">
                 <b>buscar a partir del lugar: </b> <input type='text' id="lugar1" name="has_geo"/>
             <input id="botonPlace" type="button" value="Buscar">
-        </form>
+            </form>
+            <form method="POST" id="formMediaType">
+                <b>buscar a partir del tipo de medio: </b> <input type='text' id="tipo1" name="media"/>
+            <input id="botonMediaType" type="button" value="Buscar">
+            </form>
+            <form method="POST" id="formText">
+                <b>busqueda de texto libre: </b> <input type='text' id="texto1" name="text"/>
+            <input id="botonText" type="button" value="Buscar">
+             </form>
             <div id="imagenes"></div>
             
         </section>
