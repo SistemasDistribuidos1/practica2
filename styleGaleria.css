@@ -1,6 +1,14 @@
 body{
-margin-top: 200;
-margin-left: 300;
+margin-top: 50px;
+margin-left: 150px;
+}
+b{
+    font-family: 'Times New Roman', Times, serif;
+    color:midnightblue;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: indigo;
 }
 #imagenes {
     color: aquamarine;
