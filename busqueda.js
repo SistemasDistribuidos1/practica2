@@ -4,7 +4,7 @@ $(function() {
    var boton = $("#boton");
     var fechaMin= $("#fechaMin");
    var listfoto= new Array();
-    /*evento que se activa cuando el usuario busaca a partir de una fecha determinada */
+    /*evento que se activa cuando el usuario busca a partir de una fecha determinada */
     boton.click( dateMin);
     
     /*funcion que busca a traves de flickr las imgenes subidas despues de fecha*/
@@ -19,6 +19,8 @@ $(function() {
 	        mostrar_fotos
         );
     }
+
+
     var botonMax = $("#botonMax");
     botonMax.click(dateMax);
     /*funcion que busca a traves de flickr las imagenes o videos subidos antes de fecha*/
@@ -31,6 +33,8 @@ $(function() {
 	        mostrar_fotos
         );
     }
+
+
     var botonTag = $("#botonTag");
     botonTag.click(tag);
     
@@ -59,6 +63,7 @@ $(function() {
         );
     }
 
+
     var botonMediaType = $("#botonMediaType");
     botonMediaType.click(mediaType);
     /*funcion que busca a traves de flickr las imagenes o videos subidos en función de su tipo, puediendo ser
@@ -72,6 +77,7 @@ $(function() {
 	        mostrar_fotos
         );
     }
+ 
     
     var botonText = $("#botonText");
     botonText.click(freeText);
@@ -85,6 +91,8 @@ $(function() {
 	        mostrar_fotos
         );
     }
+
+
     /**
      * muestras las fotos obtenidas de flickr
      * @param info 
@@ -92,35 +100,23 @@ $(function() {
     function mostrar_fotos(info){
 	    var i;
 	    for (i=0;i<info.photos.photo.length;i++) {
-            if (!containe(info.photos.photo[i])){
-           
 	        var item =info.photos.photo[i];
 	        var url = 'https://farm'+item.farm+".staticflickr.com/"+item.server
 		          +'/'+item.id+'_'+item.secret+'_m.jpg';
-        console.debug(url);
-       
-        $("#imagenes").append($("<img/>").attr("src",url)); 
-        
-        listfoto.push(info.photos.photo[i]);
-            }
+            console.debug(url);       
+            $("#imagenes").append($("<img id=\"img\"/>").attr("src",url));                         
         }
-       
+        $("#imagenes").append($("<br>"+"<img id=\"imagenGrande\"/>").attr("src",url)); 
     }
 
-    /**
-     * comprueba si la foto ya estaba o se acaba de subir
-     *  
-     */
-    function containe(foto){
-        var esta=false;
-        var j;
-        for(j=0;j<listfoto.length;j++){
-            if(foto==listfoto[j])
-                esta=true;
-        }
-        return esta;
-    }
 
+    $("#imagenes > #img").click(zoom);
+    
+    function zoom(info){
+        alert(this.src());
+
+        $("#imagenGrande").attr("src",$(this).attr("src"));
+    }
 
 }
 )	

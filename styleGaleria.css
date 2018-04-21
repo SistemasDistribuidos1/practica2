@@ -1,10 +1,12 @@
 body{
-margin-top: 50px;
-margin-left: 150px;
+    margin-top: 50px;
+    margin-left: 150px;
+    background-color:green;
 }
 b{
     font-family: 'Times New Roman', Times, serif;
     color:midnightblue;
+    
 }
 h1{
     font-family: 'Times New Roman', Times, serif;
@@ -13,6 +15,29 @@ h1{
 #imagenes {
     color: aquamarine;
     float: left;
-    
-    
+}
+#imagenGrande{
+    height: 200px;
+}
+#fechaMin{
+    margin-left: 55px;
+}
+#fechaMax1{
+    margin-left: 72px;
+}
+#etiqueta1{
+    margin-left: 37px;
+}
+#lugar1{
+    margin-left: 68px;
+}
+#tipo1{
+    margin-left: 13px;
+}
+#texto1{
+    margin-left: 78px;
+}
+p{
+    border-style: double;
+    text-align: center;
 }
