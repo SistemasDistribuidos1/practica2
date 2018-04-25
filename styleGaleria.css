@@ -1,62 +1,17 @@
 body{
     margin-top: 50px;
     margin-left: 150px;
-    background-color:lightcyan;
+    background-color:green;
 }
 b{
-    font: 150% sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color:midnightblue;
     
 }
-x{
-	font: 150% sans-serif;
-    color:midnightblue;
-}
 h1{
-    font: bold 200% sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: indigo;
 }
-
-#fechaMin , #fechaMax1 , #etiqueta1 , #lugar1 , #tipo1 , #texto1 {
-	display: inline-block;
-	zoom: 1.5;
-	margin-right: 30px;
-	*display: inline;
-	border: solid 1px #d2d2d2;
-	padding: 3px 5px;
-	-webkit-border-radius: 2em;
-	-moz-border-radius: 2em;
-	border-radius: 2em;
-	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1);
-	-moz-box-shadow: 0 1px 0px rgba(0,0,0,.1);
-	box-shadow: 0 1px 0px rgba(0,0,0,.1);
-	background: #f1f1f1;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
-	background: -moz-linear-gradient(top,  #fff,  #ededed);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
-	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
- 
-}
- 
-#boton , #botonMax , #botonTag , #botonPlace , #botonMediaType , #botonText {
-    font-size:30px;
-    font: sans-serif;
-    font-weight:bold;
-    color:white;
-    background:#191970;
-    width:120px;
-    height:45px;
-    display: inline-block;
-	*display: inline;
-	border: solid 1px #d2d2d2;
-	padding: 3px 5px;
-	-webkit-border-radius: 2em;
-	-moz-border-radius: 2em;
-	border-radius: 2em;
-	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1);
-	-moz-box-shadow: 0 1px 0px rgba(0,0,0,.1);
-}
-
 #imagenes {
     color: aquamarine;
     float: left;
@@ -68,19 +23,19 @@ h1{
     margin-left: 55px;
 }
 #fechaMax1{
-    margin-left: 65px;
+    margin-left: 72px;
 }
 #etiqueta1{
-    margin-left: 35px;
+    margin-left: 37px;
 }
 #lugar1{
-    margin-left: 70px;
+    margin-left: 68px;
 }
 #tipo1{
-    margin-left: 10px;
+    margin-left: 13px;
 }
 #texto1{
-    margin-left: 72px;
+    margin-left: 78px;
 }
 p{
     border-style: double;
