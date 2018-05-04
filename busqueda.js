@@ -9,6 +9,7 @@ $(function() {
     var listfoto= new Array();
     /*evento que se activa cuando el usuario busca a partir de una fecha determinada */
     boton.click(dateMin, dateMax, tag, place, mediaType, freeText);
+
     
     
     /*funcion que busca a traves de flickr las imgenes subidas despues de fecha*/
@@ -123,17 +124,7 @@ $(function() {
          
     }
 
-    function validar(){
-        var validado = true;
-        elementos = document.getElementsByClassName("inputFormu");
-        for(i=0;i<elementos.length;i++){
-          if(!elementos[i].value == "" || !elementos[i].value == null){
-          validado = false
-          }
-        }
-        
-        
-      }
+  
 
 
     /*Cambia el tamaño de la imagen*/
