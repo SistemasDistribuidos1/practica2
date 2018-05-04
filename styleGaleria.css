@@ -1,3 +1,4 @@
+
 body{
     margin-top: 50px;
     margin-left: 150px;
@@ -6,7 +7,7 @@ body{
 b{
     font: 150% sans-serif;
     color:midnightblue;
-    
+     
 }
 x{
 	font: 150% sans-serif;
@@ -17,12 +18,13 @@ h1{
     color: indigo;
 }
 
+
 #fechaMin , #fechaMax1 , #etiqueta1 , #lugar1 , #tipo1 , #texto1 {
 	display: inline-block;
 	zoom: 1.5;
 	margin-right: 30px;
 	*display: inline;
-	border: solid 1px #d2d2d2;
+	border: solid 1px #170250;
 	padding: 3px 5px;
 	-webkit-border-radius: 2em;
 	-moz-border-radius: 2em;
@@ -38,28 +40,27 @@ h1{
  
 }
  
-#boton , #botonMax , #botonTag , #botonPlace , #botonMediaType , #botonText {
-    font-size:30px;
-    font: sans-serif;
-    font-weight:bold;
-    color:white;
-    background:#191970;
-    width:120px;
-    height:45px;
-    display: inline-block;
-	*display: inline;
-	border: solid 1px #d2d2d2;
-	padding: 3px 5px;
-	-webkit-border-radius: 2em;
-	-moz-border-radius: 2em;
-	border-radius: 2em;
-	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1);
-	-moz-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+#boton {
+        border: none;
+        background: #3a7999;
+        color: #f2f2f2;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        position: relative;
+        box-sizing: border-box;
+        transition: all 500ms ease;
+
 }
+#boton:hover {
+    background: rgba(0,0,0,0);
+    color: #3a7999;
+    box-shadow: inset 0 0 0 3px #3a7999;
+    }
 
 #imagenes {
     color: aquamarine;
-    float: left;
+    float: left;   
 }
 #imagenGrande{
     height: 200px;

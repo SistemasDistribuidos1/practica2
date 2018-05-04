@@ -16,37 +16,38 @@
         <section>
             <h1>Flickr Public Photos</h1>
  
-            <form method="POST" id="formMin">
-                <b>Buscar a partir de la fecha: </b> <input type='text' id="fechaMin" name="min_taken_date" placeholder="ej:2017-02-11"/>
-                <input id="boton" type="button" value="Buscar">
+            <form  method="POST" id="busqueda">
+                
+                <b>Buscar a partir de la fecha: </b> <input class="inputFormu" type='text' id="fechaMin" name="min_taken_date" placeholder="ej:2017-02-11"/>
+            
+            <br><br>
+            
+                <b>Buscar antes de la fecha: </b> <input class="inputFormu" type='text' id="fechaMax1" name="max_taken_date"placeholder="ej:2017-02-11"/>
+             
+            <br><br>
+            
+                <b>Buscar a partir de la etiqueta: </b> <input class="inputFormu" type='text' id="etiqueta1" name="tags" placeholder="etiqueta"/>
+            
+            <br><br>
+            
+                <b>Buscar a partir del lugar: </b> <input class="inputFormu" type='text' id="lugar1" name="has_geo" placeholder="lugar"/>
+            
+            <br><br>
+            
+                <b>Buscar a partir del tipo de medio: </b> <input class="inputFormu" type='text' id="tipo1" name="media" placeholder="All/Photos/Video"/>
+            
+            <br><br>
+            
+                <b>Busqueda de texto libre: </b> <input class="inputFormu" type='text' id="texto1" name="text" placeholder="ej:2017-02-11"/>
+            <br><br>
+
+            <input id="boton" type="button" value="Buscar">
+
+
             </form>
+            
+            
             <br>
-            <form method="POST" id="formMax">
-                <b>Buscar antes de la fecha: </b> <input type='text' id="fechaMax1" name="max_taken_date"/>
-                <input id="botonMax" type="button" value="Buscar">
-            </form>
-            <br>
-            <form method="POST" id="formTag">
-                <b>Buscar a partir de la etiqueta: </b> <input type='text' id="etiqueta1" name="tags"/>
-                <input id="botonTag" type="button" value="Buscar">
-            </form>
-            <br>
-            <form method="POST" id="formPlace">
-                <b>Buscar a partir del lugar: </b> <input type='text' id="lugar1" name="has_geo"/>
-            	<input id="botonPlace" type="button" value="Buscar">
-            </form>
-            <br>
-            <form method="POST" id="formMediaType">
-                <b>Buscar a partir del tipo de medio: </b> <input type='text' id="tipo1" name="media"/>
-            	<input id="botonMediaType" type="button" value="Buscar">
-            </form>
-            <br>
-            <form method="POST" id="formText">
-                <b>Busqueda de texto libre: </b> <input type='text' id="texto1" name="text"/>
-            	<input id="botonText" type="button" value="Buscar">
-            </form>
-            <br>
-        
             <div id="imagenes" ></div>
              
         </section>
