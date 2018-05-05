@@ -3,102 +3,60 @@ $(function() {
 
     var boton = $("#boton");
     var fechaMin= $("#fechaMin");
-    var fechaMax = $("#fechaMax1");
-    var etiqueta = $("#etiqueta1");
+    
+    /*var etiqueta = $("#etiqueta1");*/
     var lugar = $("#lugar1");
     var listfoto= new Array();
-    /*evento que se activa cuando el usuario busca a partir de una fecha determinada */
-    boton.click(dateMin, dateMax, tag, place, mediaType, freeText);
+    /*evento que se activa cuando el usuario pulsa buscar */
+    boton.click(buscar);
 
     
     
-    /*funcion que busca a traves de flickr las imgenes subidas despues de fecha*/
-    function dateMin(){ 
-        $("#imagenes #busq").remove();
-        var fecha = fechaMin.val();
-            if(fecha.length > 0){
-        
-            $("#imagenes").append($("<p id=\"busq\">"+fecha+"</p>"));
-            $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
-                + api_key + '&user_id=' +user_id + '&min_taken_date=' + fecha +
-                '&format=json&nojsoncallback=1',
-                mostrar_fotos
-            );
-            }   
-    }
-
-    /*funcion que busca a traves de flickr las imagenes o videos subidos antes de fecha*/
-    function dateMax(){ 
-        $("#imagenes #busq").remove();
-        var fechaMax = $("#fechaMax1").val();
-            if(fechaMax.length > 0){
-        
-            $("#imagenes").append($("<p id=\"busq\">"+fechaMax+"</p>"));
-            $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
-                + api_key + '&user_id=' + user_id + '&max_taken_date=' + fechaMax +
-                '&format=json&nojsoncallback=1',
-                mostrar_fotos
-            );
+    /*funcion que busca a traves de flickr las imgenes */
+    function buscar(){ 
+        $("#imagenes .busq").remove();
+        var fecha ='&min_taken_date=' + $("#fechaMin").val();
+        var fechaMax ='&max_taken_date='+ $("#fechaMax1").val();
+        var etiqueta ='&tags='+ $("#etiqueta1").val();
+        var lugar ='&has_geo='+ $("#lugar1").val();
+        var tipo = '&media='+$("#tipo1").val();
+        var texto = '&text='+$("#texto1").val();
+       
+            if(fechaMin.val().length = 0){
+                fecha="";
             }
-    }
-
-    function tag(){ 
-        $("#imagenes #busq").remove();
-        var etiqueta = $("#etiqueta1").val();
-            if (etiqueta.length > 0){
-
-            $("#imagenes").append($("<p id=\"busq\">"+etiqueta+"</p>"));
-            $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
-                + api_key + '&user_id=' +user_id + '&tags=' + etiqueta +
-                '&format=json&nojsoncallback=1',
-                mostrar_fotos
-            );
+            if($("#fechaMax1").val().length = 0){
+                fechaMax="";
             }
-    }
-
-    
-    function place(){ 
-        $("#imagenes #busq").remove();
-        var lugar = $("#lugar1").val();
-            if(lugar.length > 0){
-            $("#imagenes").append($("<p id=\"busq\">"+lugar+"</p>"));
-            $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
-                + api_key + '&user_id=' +user_id + '&has_geo=' + lugar +
-                '&format=json&nojsoncallback=1',
-                mostrar_fotos
-            );
+            if($("#etiqueta1").val().length = 0){
+                etiqueta="";
             }
-    }
-
-    /*funcion que busca a traves de flickr las imagenes o videos subidos en función de su tipo, puediendo ser
-      all(todos por defecto), photos(fotos) o videos*/
-    function mediaType(){ 
-        $("#imagenes #busq").remove();
-        var tipo = $("#tipo1").val();
-            if(tipo.length > 0){
-            $("#imagenes").append($("<p id=\"busq\">"+tipo+"</p>"));
-            $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
-                + api_key + '&user_id=' +user_id + '&media=' + tipo +
-                '&format=json&nojsoncallback=1',
-                mostrar_fotos
-            );
+            if($("#lugar1").val().length = 0){
+                lugar="";
             }
-    }
+            if($("#tipo1").val().length = 0){
+                tipo="";
+            }
+            if($("#texto1").val().length = 0){
+                texto="";
+            }
  
-    /*funcion que busca fotos o videos cuyo titulo, etiqueta o descripcion contiene el texto buscado*/
-    function freeText(){ 
-        $("#imagenes #busq").remove();
-        var texto = $("#texto1").val();
-        
-        if(texto.length > 0){
-        $("#imagenes").append($("<p id=\"busq\">"+texto+"</p>"));
-        $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
-	        + api_key + '&user_id=' +user_id + '&text=' + texto +
-	        '&format=json&nojsoncallback=1',
-	        mostrar_fotos
-        );
-        }
+
+                 $("#imagenes").append($("<p class=\"busq\"> A partir de la fecha: "+$("#fechaMin").val()+". "+
+                 "Antes de la fecha: "+$("#fechaMax1").val()+". "+
+                 "Con etiqueta: "+$("#etiqueta1").val()+". "+
+                 "Esta geocalizado(0=no/otra cosa=si): "+$("#lugar1").val()+". "+
+                 "Tipo de multimedia: "+$("#tipo1").val()+". "+
+                 "Contiene el texto: "+$("#texto1").val()+". "+"</p>"));
+            $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
+                + api_key + '&user_id=' +user_id +  fecha + fechaMax +etiqueta+lugar+tipo+texto+
+                '&format=json&nojsoncallback=1',
+                mostrar_fotos
+            );
+             
     }
+
+   
 
 
     /**

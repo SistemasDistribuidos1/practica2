@@ -59,31 +59,30 @@ h1{
     }
 
 #imagenes {
-    color: aquamarine;
+
     float: left;   
 }
-#imagenGrande{
-    height: 200px;
-}
+
 #fechaMin{
-    margin-left: 55px;
+    margin-left: 77px;
 }
 #fechaMax1{
-    margin-left: 65px;
+    margin-left: 92px;
 }
 #etiqueta1{
-    margin-left: 35px;
+    margin-left: 50px;
 }
 #lugar1{
-    margin-left: 70px;
+    margin-left: 172px;
 }
 #tipo1{
     margin-left: 10px;
 }
 #texto1{
-    margin-left: 72px;
+    margin-left: 100px;
 }
 p{
     border-style: double;
     text-align: center;
+    color:midnightblue;
 }
